@@ -31,11 +31,11 @@ CSV file details:
 * 3 Columns , 5 rows
 
 JVM:
-* Reading from file : 5.77ms
-* Getting a value : 0.1 ms
-* Adding a query : 0.03 ms
-
-Native ELF:
-* Reading from file : 6.03 ms
-* Getting a value : 0.02 ms
+* Reading from file : 0.29 ms
+* Getting a value : 0.005 ms
 * Adding a query : 0.005 ms
+
+Native ELF:.
+* Reading from file : 0.03 ms
+* Getting a value : 0.0002344 ms
+* Adding a query : 0.0002502 ms

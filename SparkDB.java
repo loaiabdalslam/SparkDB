@@ -36,7 +36,6 @@ public class SparkDB {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.gc();
 	}
 	void readfromString(String data) {
 		InputStream stream = new ByteArrayInputStream(data.getBytes(StandardCharsets.UTF_8));
