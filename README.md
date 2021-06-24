@@ -16,7 +16,7 @@ What if you decided *hypothetically* to encrypt that file? Then, decrypt it and 
 
 
 ## Usage
-1- Define the object through `SparkDB db = new SparkDB();`.
+1- Define the object through `SparkDB db = new SparkDB();`.<br>
 2- read data through `db.readfromfile(filename)` or `db.readfromString(string)`, based on your needs.
 #### Adding queries
 If you have 3 columns in your table, make a `String[]` that has the data with length of 3 elements.
