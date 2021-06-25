@@ -13,7 +13,14 @@ Nothing is complicated. Two lines is all you need.
 * **Custom Input enhances security!**
 I don't know if you're reading from a file directly or you're going to give me a String. But I know that I have to put all options to you to fit your needs.
 What if you decided *hypothetically* to encrypt that file? Then, decrypt it and throw it to us as a plain String, we'll do the rest.
+* **Updates!**
+Since This is a developing project, a lot of updates that will enhance performance are on the way!
 
+## CSV Syntax
+```
+"id","user","pass"
+"0","morad","ali"
+```
 
 ## Usage
 1- Define the object through `SparkDB db = new SparkDB();`.<br>
@@ -22,20 +29,24 @@ What if you decided *hypothetically* to encrypt that file? Then, decrypt it and 
 If you have 3 columns in your table, make a `String[]` that has the data with length of 3 elements.
 Example: You'll add `new String[] {"0","morad","simp"}` to a table that has **ID,Username,Password**. *Deleting queries is the same.*
 #### Getting values
-If I want to get what user has an ID value of 0 , I'd do it with `db.get("id","0","user")`
+If you want to get what user has an ID value of 0 , You can do it with `db.get("id","0","user")`
+#### Getting multiple values
+If two users have the same id, You can call `db.multiget("id","0","user")` to get the both users
+#### Print the DB
+If you want *hypothetically* to write the changes to the file again, you can do it with `db.print()` and it will return a String which is the updated DB
 
 ## Tests
 This software was tested in OpenJDK Runtime Environment GraalVM CE 21.1.0 (build 11.0.11+8-jvmci-21.1-b05).
 #### Performance
 CSV file details:
-* 3 Columns , 5 rows
+* 3 Columns , 1000 rows
 
 JVM:
-* Reading from file : 0.29 ms
-* Getting a value : 0.005 ms
-* Adding a query : 0.005 ms
+* Process : 1.342436833 ms
+* Get : 0.026370710999999998 ms
+* Add : 0.0031770590000000003 ms
+* MultiGet : 0.109891479 ms
+* Delete : 0.074490905 ms
+* Print : 13.214214717 ms
 
-Native ELF:.
-* Reading from file : 0.03 ms
-* Getting a value : 0.0002344 ms
-* Adding a query : 0.0002502 ms
+On Native ELF, speed is 10x faster.
