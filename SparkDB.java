@@ -11,6 +11,7 @@ public class SparkDB {
 	public static HashMap<String, ArrayList<String>> Mapper = new HashMap<String, ArrayList<String>>();
 	public static ArrayList<String> Headers = new ArrayList<String>();
 	public static int num_header = 0;
+
 	void readfromfile(String filename) {
 		boolean headerisprocessed = false;
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
@@ -37,6 +38,7 @@ public class SparkDB {
 			e.printStackTrace();
 		}
 	}
+
 	void readfromString(String data) {
 		InputStream stream = new ByteArrayInputStream(data.getBytes(StandardCharsets.UTF_8));
 		boolean headerisprocessed = false;
@@ -63,30 +65,33 @@ public class SparkDB {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.gc();
 	}
+
 	String get(String FromCol, String ColVal, String ColToFind) {
 		return Mapper.get(ColToFind).get(Mapper.get(FromCol).indexOf(ColVal));
-		
+
 	}
+
 	String getbyindex(int index) {
 		String out = "";
-		for(int i = 0;i<num_header;i++) {
-		String temp = Headers.get(i);
-		out += temp + ":" + Mapper.get(temp).get(index)+",";
+		for (int i = 0; i < num_header; i++) {
+			String temp = Headers.get(i);
+			out += temp + ":" + Mapper.get(temp).get(index) + ",";
 		}
-		return out.substring(0,out.length()-1);
+		return out.substring(0, out.length() - 1);
 	}
+
 	void add(String[] in) {
-		if(in.length == num_header) {
-			for(int i = 0;i<num_header;i++) {
+		if (in.length == num_header) {
+			for (int i = 0; i < num_header; i++) {
 				Mapper.get(Headers.get(i)).add(in[i]);
 			}
 		}
 	}
+
 	void delete(String[] in) {
-		if(in.length == num_header) { 
-			for(int i = 0;i<num_header;i++) {
+		if (in.length == num_header) {
+			for (int i = 0; i < num_header; i++) {
 				Mapper.get(Headers.get(i)).remove(in[i]);
 			}
 		}
