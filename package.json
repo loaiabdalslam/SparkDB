@@ -1,0 +1,29 @@
+{
+  "name": "sparkdb",
+  "version": "1.0.0",
+  "description": "creating spark database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Praudyogikee/SparkDB.git"
+  },
+  "keywords": [
+    "spark",
+    "database",
+    "javascript",
+    "java"
+  ],
+  "author": "moradPraudyogikee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Praudyogikee/SparkDB/issues"
+  },
+  "homepage": "https://github.com/Praudyogikee/SparkDB#readme",
+  "dependencies": {
+    "hashmap": "^2.4.0",
+    "lodash": "^4.17.21"
+  }
+}
