@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Praudyogikee/SparkDB#readme",
   "dependencies": {
+    "faker": "^5.5.3",
     "hashmap": "^2.4.0",
     "lodash": "^4.17.21"
   }
